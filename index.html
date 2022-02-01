@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Gruppevelger</title>
+</head>
+
+<body>
+  <h1>Gruppevelger</h1>
+
+
+  <p id="grupper"></p>
+
+  <button type="button" onclick="myFunction()">Lag gruppene!</button>
+
+  <script>
+    function myFunction() {
+      const elever = ['Albert', 'August', 'Axel', 'Celine', 'Caroline', 'Mia', 'Nora Sofie', 'Ibi', 'Frederik', 'Dawid', 'Felix'];
+      var gruppe1 = "";
+      var utvalgt;
+      var randNum;
+      var antall = elever.length;
+
+      for(l = 0; l < antall; l++) {
+        if (l%4==0){ gruppe1 += '--------------------<br>';}
+        randNum = Math.floor(Math.random()*elever.length);
+        utvalgt = elever.splice(randNum,1);
+        gruppe1 += utvalgt + '<br>';
+        console.log(elever.length);
+
+      }
+      document.getElementById("grupper").innerHTML ='<p>Her er gruppene:</p>';
+      document.getElementById("grupper").innerHTML += gruppe1;
+
+    }
+  </script>
+</body>
+
+</html>
