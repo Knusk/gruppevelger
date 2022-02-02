@@ -18,19 +18,20 @@
     function myFunction() {
       const elever = ['Albert', 'August', 'Axel', 'Celine', 'Caroline', 'Mia', 'Nora Sofie', 'Ibi', 'Frederik', 'Dawid', 'Felix'];
       var gruppe1 = "";
+      var gruppeStr = 4;
       var utvalgt;
       var randNum;
       var antall = elever.length;
 
       for(l = 0; l < antall; l++) {
-        if (l%4==0){ gruppe1 += '--------------------<br>';}
+        if (l%gruppeStr==0){ gruppe1 += '--------------------<br>';}
         randNum = Math.floor(Math.random()*elever.length);
         utvalgt = elever.splice(randNum,1);
         gruppe1 += utvalgt + '<br>';
-        console.log(elever.length);
+        //console.log(elever.length);
 
       }
-      document.getElementById("grupper").innerHTML ='<p>Her er gruppene:</p>';
+      document.getElementById("grupper").innerHTML ='<h2>Her er gruppene:</h2>';
       document.getElementById("grupper").innerHTML += gruppe1;
 
     }
